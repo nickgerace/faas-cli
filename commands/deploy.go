@@ -273,6 +273,10 @@ Error: %s`, fprocessErr.Error())
 				function.ReadOnlyRootFilesystem = deployFlags.readOnlyRootFilesystem
 			}
 
+			if functionNamespace != "" {
+				function.Namespace = functionNamespace
+			}
+
 			deploySpec := &proxy.DeployFunctionSpec{
 				FProcess:                function.FProcess,
 				FunctionName:            function.Name,
